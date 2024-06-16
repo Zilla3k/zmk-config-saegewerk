@@ -339,6 +339,11 @@
             key-positions = <36 37>;
             layers = <0 2 3 4 5>;
         };
+
+        rgb_dnw {
+            bindings = <&rgb_ug RGB_BRD>;
+            key-positions = <0 9>;
+        };
     };
 
     keymap {
