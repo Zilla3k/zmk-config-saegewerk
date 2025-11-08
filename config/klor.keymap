@@ -325,7 +325,7 @@
         MACRO {
             bindings = <
         &trans       &trans     &trans     &trans     &trans                  &trans  &trans  &trans  &trans  &trans
-&trans  &kp RA(TAB)  &trans     &trans     &trans     &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LG(TAB)  &trans     &trans     &trans     &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp LG(Z)    &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
                                 &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans
             >;
