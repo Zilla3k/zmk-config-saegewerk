@@ -290,10 +290,10 @@
 
         QWERTY {
             bindings = <
-        &kp Q        &kp W        &kp E           &kp R           &kp T                                 &kp Y          &kp U  &kp I                                 &kp O              &kp P
-&trans  &hm LCTRL A  &hm LSHFT S  &hm LEFT_ALT D  &hm LEFT_GUI F  &kp G                                 &kp H          &kp J  &hm RIGHT_ALT K                       &hm RIGHT_SHIFT L  &hm APOS SEMI  &trans
-&trans  &kp Z        &kp X        &kp C           &kp V           &kp B    &kp C_PLAY_PAUSE  &kp B      &kp N          &kp M  &kp COMMA                             &kp DOT            &kp FSLH       &trans
-                                  &kp LCTRL       &mo 1           &kp TAB  &kp SPACE         &kp ENTER  &kp BACKSPACE  &mo 2  &hm LG(LC(LEFT_ARROW)) LG(LC(RIGHT))
+        &kp Q               &kp W        &kp E           &kp R           &kp T                                  &kp Y      &kp U  &kp I                         &kp O              &kp P
+&trans  &hm LG(A) A         &hm LSHFT S  &hm LEFT_ALT D  &hm LEFT_GUI F  &kp G                                  &kp H      &kp J  &hm RIGHT_ALT K               &hm RIGHT_SHIFT L  &hm APOS SEMI  &trans
+&trans  &hm Z LEFT_COMMAND  &kp X        &kp C           &kp V           &kp B        &kp C_PLAY_PAUSE  &kp B   &kp N      &kp M  &kp COMMA                     &kp DOT            &kp FSLH       &trans
+                                         &kp LEFT_GUI    &lt 1 LC(C)     &lt 3 SPACE  &trans            &trans  &kp ENTER  &mo 2  &hm LC(LEFT_ARROW) LC(RIGHT)
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
@@ -302,10 +302,10 @@
 
         LOWER {
             bindings = <
-        &kp N1          &kp N2     &kp N3    &kp N4          &kp N5                           &kp N6     &kp N7    &kp N8     &kp N9                &kp N0
-&trans  &hm GRAVE EXCL  &kp AT     &kp HASH  &kp DOLLAR      &kp PERCENT                      &kp CARET  &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans  &kp EQUAL       &kp MINUS  &kp PLUS  &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans  &trans  &kp LBKT   &kp RBKT  &kp SEMI   &kp COLON             &kp NUBS               &trans
-                                   &trans    &trans          &trans           &trans  &trans  &trans     &trans    &trans
+        &kp N1     &kp N2     &kp N3    &kp N4          &kp N5                           &kp N6     &kp N7    &kp N8     &kp N9                &kp N0
+&trans  &kp EXCL   &kp AT     &kp HASH  &kp DOLLAR      &kp PERCENT                      &kp CARET  &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans  &kp EQUAL  &kp MINUS  &kp PLUS  &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans  &trans  &kp LBKT   &kp RBKT  &kp SEMI   &kp COLON             &kp NUBS               &trans
+                              &trans    &trans          &trans           &trans  &trans  &trans     &trans    &trans
             >;
 
             label = "LOWER";
@@ -322,13 +322,15 @@
             label = "ADJUST";
         };
 
-        layer_3 {
+        MACRO {
             bindings = <
-        &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans       &trans     &trans     &trans     &trans                  &trans  &trans  &trans  &trans  &trans
+&trans  &kp RA(TAB)  &trans     &trans     &trans     &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LG(Z)    &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans
             >;
+
+            label = "MACRO";
         };
     };
 };
