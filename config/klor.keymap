@@ -278,6 +278,18 @@
             bindings = <&kp DEL>;
             key-positions = <20 9>;
         };
+
+        WIN {
+            bindings = <&to 1>;
+            key-positions = <4 3 5 6>;
+            layers = <0 2 3 1 4 5>;
+        };
+
+        MACOS {
+            bindings = <&to 0>;
+            key-positions = <14 15 16 17>;
+            layers = <0 2 3 1 4 5>;
+        };
     };
 
     keymap {
@@ -288,16 +300,30 @@
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-        QWERTY {
+        MACOS {
             bindings = <
         &kp Q           &kp W        &kp E           &kp R           &kp T                                  &kp Y      &kp U            &kp I                         &kp O              &kp P
 &trans  &hm LG(A) A     &hm LSHFT S  &hm LEFT_ALT D  &hm LEFT_GUI F  &kp G                                  &kp H      &kp J            &hm RIGHT_ALT K               &hm RIGHT_SHIFT L  &hm APOS SEMI  &trans
 &trans  &hm LEFT_GUI Z  &kp X        &kp C           &kp V           &kp B        &kp C_PLAY_PAUSE  &kp B   &kp N      &kp M            &kp COMMA                     &kp DOT            &kp FSLH       &trans
-                                     &kp LEFT_GUI    &lt 1 TAB       &lt 3 SPACE  &trans            &trans  &kp ENTER  &lt 2 BACKSPACE  &hm LC(LEFT_ARROW) LC(RIGHT)
+                                     &kp LEFT_GUI    &lt 2 TAB       &lt 4 SPACE  &trans            &trans  &kp ENTER  &lt 3 BACKSPACE  &hm LC(LEFT_ARROW) LC(RIGHT)
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
-            label = "QWERTY";
+            label = "MACOS";
+        };
+
+        WIN {
+            label = "WIN";
+            bindings = <
+        &kp Q               &kp W        &kp E           &kp R           &kp T                                  &kp Y      &kp U            &kp I                                 &kp O              &kp P
+&trans  &hm LC(A) A         &hm LSHFT S  &hm LEFT_ALT D  &hm LEFT_GUI F  &kp G                                  &kp H      &kp J            &hm RIGHT_ALT K                       &hm RIGHT_SHIFT L  &hm APOS SEMI  &trans
+&trans  &hm LEFT_CONTROL Z  &kp X        &kp C           &kp V           &kp B        &kp C_PLAY_PAUSE  &kp B   &kp N      &kp M            &kp COMMA                             &kp DOT            &kp FSLH       &trans
+                                         &kp LEFT_GUI    &lt 2 TAB       &lt 5 SPACE  &trans            &trans  &kp ENTER  &lt 3 BACKSPACE  &hm LC(LG(LEFT_ARROW)) LC(LG(RIGHT))
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp C_NEXT C_PREV>;
         };
 
         LOWER {
@@ -322,7 +348,7 @@
             label = "ADJUST";
         };
 
-        MACRO {
+        MACRO_MACOS {
             bindings = <
         &trans       &trans     &trans     &trans     &trans                  &trans  &trans  &trans  &trans  &trans
 &trans  &kp LG(TAB)  &trans     &trans     &trans     &trans                  &trans  &trans  &trans  &trans  &trans  &trans
@@ -330,7 +356,17 @@
                                 &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
-            label = "MACRO";
+            label = "MACRO_MACOS";
+        };
+
+        MACRO_WIN {
+            label = "MACRO_WIN";
+            bindings = <
+        &trans       &trans     &trans     &trans     &trans                  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LC(TAB)  &trans     &trans     &trans     &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LC(Z)    &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans
+            >;
         };
     };
 };
